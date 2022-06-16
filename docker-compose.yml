@@ -1,0 +1,23 @@
+version: "3"
+services:
+  demo-knex-pg:
+    image: postgres:12-alpine
+    container_name: demo-knex-pg
+    environment:
+      - POSTGRES_DB=demo_knex_db
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    ports:
+      - 5430:5432
+    networks:
+      - demo-knex-net
+
+volumes:
+  pg-data:
+
+networks:
+  demo-knex-net:
+    name: demo-knex-net
+    driver: bridge
