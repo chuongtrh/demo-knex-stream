@@ -1,0 +1,12 @@
+node_modules/
+pg-data/
+
+*.sh
+
+tests/*
+!tests/specs/
+
+.idea/
+.vscode/
+
+# .env*
